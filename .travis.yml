@@ -7,7 +7,7 @@ services:
         - mysql
 
 before_script:
-        - php -v 
+        - php --version 
         - cp .env.travis .env
         - psql -c 'create database travis_ci_test;' -U postgres
         - composer self-update
