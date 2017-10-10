@@ -1,13 +1,13 @@
 lnguage: php
 
-php:
-        - 5.6 
+php: 
         - 7.0
 
 services:
         - mysql
 
 before_script:
+        - php -v 
         - cp .env.travis .env
         - psql -c 'create database travis_ci_test;' -U postgres
         - composer self-update
